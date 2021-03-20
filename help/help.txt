@@ -12,6 +12,20 @@ kubectl context switch
 ******************
 
 ******************
+kubectl config current-context
+kubectl config get-contexts 
+kubectl config get-clusters  
+kubectl config get-users
+kubectl config delete-cluster  
+kubectl config delete-context  
+kubectl config delete-user
+kubectl config set-cluster
+kubectl config set-context
+kubectl config use-context
+kubectl config view
+******************
+
+******************
 kubectl get all
 kubectl get nodes
 kubectl get pod
@@ -56,3 +70,34 @@ kubectl delete pv task-pv-volume
 sudo rm /mnt/data/index.html
 sudo rmdir /mnt/data
 *********************************
+
+*********************************
+ Horizontal Pod Autoscaler 
+*********************************
+kubectl autoscale deployment NOMEDEPLOYMENT --cpu-percent=50 --min=1 --max=10
+kubectl get hpa
+kubectl get deployment NOMEDEPLOYMENT
+*********************************
+
+ Comandos de solução de problemas e depuração:
+  describe Mostra os detalhes de um recurso específico ou grupo de recursos
+  logs Imprime os logs de um contêiner em um pod
+  attach Anexar a um contêiner em execução
+  exec Executa um comando em um contêiner
+  port-forward Encaminha uma ou mais portas locais para um pod
+  proxy Execute um proxy para o servidor da API Kubernetes
+  cp Copia arquivos e diretórios de e para contêineres.
+  auth de inspeção de autenticação
+  debug Crie sessões de depuração para solucionar problemas de cargas de trabalho e nós
+
+
+Comandos de gerenciamento de cluster:
+  certificate   Modifica os recursos do certificado.
+  cluster-info Exibir informações do cluster
+  top           Uso de recursos de exibição (CPU / memória / armazenamento).
+  cordon        Mark nó como não programável
+  uncordon      Mark não coordenado como programável
+  drain         Dreno nó em preparação para manutenção
+  taint         Atualize as manchas em um ou mais nós
+
+
