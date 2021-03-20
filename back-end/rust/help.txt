@@ -1,0 +1,8 @@
+git clone https://github.com/bitnami/tutorials
+cd tutorials/rust-k8s
+
+cd build/
+docker-compose run --rm compile
+
+cd ..
+docker build -t USERNAME/rust-k8s:0.1.0 .
