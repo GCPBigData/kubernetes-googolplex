@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: task-pvc-claim
+spec:
+  storageClassName: local-device
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+    
+     #RWO - ReadWriteOnce - o volume pode ser montado como leitura-gravação por um único nó
+     #RWX - ReadWriteMany - o volume pode ser montado somente leitura por muitos nós
+     #ROX - ReadOnlyMany- o volume pode ser montado como leitura e gravação por muitos nós
