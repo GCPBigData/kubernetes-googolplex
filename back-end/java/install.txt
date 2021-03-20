@@ -4,7 +4,7 @@ curl https://start.spring.io/starter.tgz -d dependencies=webflux,actuator | tar 
 
 ls -l target/*.jar
 
-$ java -jar target/*.jar
+java -jar target/*.jar
 
 $ curl localhost:8080/actuator | jq .
 {
