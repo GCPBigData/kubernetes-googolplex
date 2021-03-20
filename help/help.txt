@@ -8,19 +8,21 @@ minikube stop
 kubectl config view
 kubectl cluster-info
 kubectl cluster-info dump
+kubectl context switch
 ******************
 
 ******************
+kubectl get all
 kubectl get nodes
 kubectl get pod
-kubectl get rs
 kubectl get service web
 kubectl get deployments
 kubectl get pods -n kube-system
 kubectl get namespace
-kubectl get pv,pvc
+kubectl get rs,pv,pvc
 kubectl get pv task-pv-volume
 kubectl get pvc task-pvc-claim
+kubectl get svc nome-service
 ******************
 
 ******************

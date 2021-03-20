@@ -1,0 +1,50 @@
+curl https://start.spring.io/starter.tgz -d dependencies=webflux,actuator | tar -xzvf -
+
+./mvnw install
+
+ls -l target/*.jar
+
+$ java -jar target/*.jar
+
+$ curl localhost:8080/actuator | jq .
+{
+  "_links": {
+    "self": {
+      "href": "http://localhost:8080/actuator",
+      "templated": false
+    },
+    "health-path": {
+      "href": "http://localhost:8080/actuator/health/{*path}",
+      "templated": true
+    },
+    "health": {
+      "href": "http://localhost:8080/actuator/health",
+      "templated": false
+    },
+    "info": {
+      "href": "http://localhost:8080/actuator/info",
+      "templated": false
+    }
+  }
+}
+
+./mvnw spring-boot:build-image
+
+docker run -p 8080:8080 demo:0.0.1-SNAPSHOT
+
+curl localhost:8080/actuator/health
+
+***********************************************
+                   Kubernetes
+***********************************************
+kubectl create deployment demo --image=springguides/demo --dry-run -o=yaml > deployment.yaml
+echo --- >> deployment.yaml
+kubectl create service clusterip demo --tcp=8080:8080 --dry-run -o=yaml >> deployment.yaml
+
+kubectl apply -f deployment.yaml
+
+kubectl get all
+
+kubectl port-forward svc/demo 8080:8080
+
+curl localhost:8080/actuator/health
