@@ -22,7 +22,6 @@ kubectl config delete-user
 kubectl config set-cluster
 kubectl config set-context
 kubectl config use-context
-kubectl config view
 ******************
 
 ******************
@@ -90,7 +89,6 @@ kubectl get deployment NOMEDEPLOYMENT
   auth de inspeção de autenticação
   debug Crie sessões de depuração para solucionar problemas de cargas de trabalho e nós
 
-
 Comandos de gerenciamento de cluster:
   certificate   Modifica os recursos do certificado.
   cluster-info Exibir informações do cluster
@@ -99,5 +97,4 @@ Comandos de gerenciamento de cluster:
   uncordon      Mark não coordenado como programável
   drain         Dreno nó em preparação para manutenção
   taint         Atualize as manchas em um ou mais nós
-
 

@@ -5,3 +5,14 @@ sudo systemctl enable --now docker
 #sudo systemctl disable --now docker
 sudo usermod -aG docker jr
 docker --version
+
+docker pull debian
+docker images
+docker ps -a
+docker run --name=sysarmy_docker debian
+docker start sysarmy_docker
+docker attach sysarmy_docker
+cat /etc/hosts
+docker stop silly_tesla
+docker rm silly_tesla
+docker rmi docker/whalesay
